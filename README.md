@@ -28,7 +28,7 @@ npm test
 We welcome contributions! Please fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change or add.
 
 **Project Structure**
-
+```
 UISpark/
   ├── PhoneMask/
   │   ├── src/
@@ -43,8 +43,7 @@ UISpark/
   ├── package.json
   ├── README.md
   └── CONTRIBUTING.md
-
-
+```
 ## License
 This project is licensed under APACHE License.
 
