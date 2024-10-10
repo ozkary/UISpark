@@ -25,6 +25,23 @@ Run the test script by typing this command on the terminal:
 npm test
 ```
 
+## ⭐️ Star UISpark on GitHub!
+
+If you find UISpark useful, please consider giving it a ⭐️ on GitHub! Your support helps us grow and reach more developers.
+
+[![Star on GitHub](https://img.shields.io/github/stars/ozkary/uispark?style=social)](https://github.com/ozkary/uispark)
+
+**Why Star UISpark?**
+- Stay updated with the latest features and improvements.
+- Show your support for open-source development.
+- Help others discover a valuable resource for form management and utilities.
+
+## How to Star UISpark
+1. Visit the [UISpark GitHub Repository](https://github.com/ozkary/uispark).
+2. Click on the "Star" button in the top-right corner.
+
+Thank you for your support! 🌟
+
 
 ## Contributing
 We welcome contributions! Please fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change or add.
