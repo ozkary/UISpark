@@ -8,11 +8,27 @@
 - **Button Management**: Enable or disable buttons based on form state.
 
 ## Installation
+
 Install UISpark via npm:
 
 ```sh
 npm install uispark
 ```
 
-## Components
+## Test
 
+Run the test script by typing this command on the terminal:
+
+```bash
+npm test
+```
+
+
+## Contributing
+We welcome contributions! Please fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change or add.
+
+## License
+This project is licensed under APACHE License.
+
+## Contact
+For any questions or suggestions, please open an issue or reach out to us via our GitHub repository.
