@@ -25,9 +25,15 @@ function formatPhone(input) {
   const del = '-';
   const pos = value.length;
   if ([3, 7].includes(pos)) {
+    // handles user typing
     formattedValue += del;
     input.value = formattedValue;
+  } else if (pos >= 10 && formattedValue.indexOf(del) < 0) {
+    // full phone number pasted
+    formattedValue = value.substring(0, 3) + del + value.substring(3, 6) + del + value.substring(6, 10);
+    input.value = formattedValue;  
   }
+  
 }
 
 module.exports = {

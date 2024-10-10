@@ -27,6 +27,24 @@ npm test
 ## Contributing
 We welcome contributions! Please fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change or add.
 
+**Project Structure**
+
+UISpark/
+  ├── PhoneMask/
+  │   ├── src/
+  │   │   └── index.js
+  │   ├── test/
+  │   │   └── index.test.js
+  │   └── README.md
+  ├── .github/
+  │   └── workflows/
+  │       └── publish.yml
+  ├── index.js
+  ├── package.json
+  ├── README.md
+  └── CONTRIBUTING.md
+
+
 ## License
 This project is licensed under APACHE License.
 
