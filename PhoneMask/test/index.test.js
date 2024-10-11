@@ -31,15 +31,31 @@ global.navigator = {
 };
 
 const input = window.document.createElement('input');
+
 input.type = 'tel';
 input.id = 'phone';
 window.document.body.appendChild(input);
 
+const countrySelector = window.document.createElement('select');
+    countrySelector.id = 'country-code';
+    countrySelector.innerHTML = `
+      <option value="US">US</option>
+      <option value="UK">UK</option>
+      <option value="FR">FR</option>
+      <option value="KR">KR</option>
+    `;
+    
+    window.document.body.appendChild(countrySelector);
+
 
 // Test cases
 describe('PhoneMask', () => {
-  it('should format phone numbers correctly when typing', async () => {
-  
+
+  it('should format phone numbers correctly when typing with selected contury code', async () => {
+    
+    // Test formatting for US
+    countrySelector.value = 'US';
+    
     input.value = '';
     PhoneMask.attach('#phone');
     
@@ -52,12 +68,36 @@ describe('PhoneMask', () => {
     expect(input.value).to.equal('012-345-6789');
   });
 
-  it('should format phone numbers correctly when pasting', async () => {
-   
-    input.value = '1234567890';
-    PhoneMask.attach('#phone');
+
+  it('should update format correctly with country code selected', async () => {
+
+    // Test formatting for US
+    countrySelector.value = 'US';
+    input.value = '1234567890'; // Set a US phone number
     input.dispatchEvent(new window.Event('input'));
 
-    expect(input.value).to.equal('123-456-7890');
+    expect(input.value).to.equal('123-456-7890'); // Check US formatted value
+
+    // Test formatting for UK
+    countrySelector.value = 'UK';
+    input.value = '123456789'; // Set a UK phone number
+    input.dispatchEvent(new window.Event('input'));
+
+    expect(input.value).to.equal('1234 567 89'); // Check UK formatted value
+
+    // Test formatting for FR
+    countrySelector.value = 'FR';
+    input.value = '123456789'; // Set a FR phone number
+    input.dispatchEvent(new window.Event('input'));
+
+    expect(input.value).to.equal('1 23 45 67 89'); // Check FR formatted value
+
+
+    // Test formatting for KR
+    countrySelector.value = 'KR';
+    input.value = '010-1234-6789'; // Set a KR phone number
+    input.dispatchEvent(new window.Event('input'));
+
+    expect(input.value).to.equal('010-1234-6789'); // Check KR formatted value
   });
 });
