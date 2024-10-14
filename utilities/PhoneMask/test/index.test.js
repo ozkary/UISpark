@@ -1,5 +1,5 @@
 /**
- * UISpark - PhoneMask Component Tests
+ * UISpark - PhoneMask Utility Tests
  * 
  * Unit tests for the PhoneMask component.
  * Ensures phone number formatting functionality works as expected.
@@ -15,20 +15,11 @@
  * @updated  2024-10-01
  */
 
+require('../../../setup/test');
 const { expect } = require('chai');
 const { JSDOM } = require('jsdom');
 const PhoneMask = require('../src/index');
 
-// Create a new jsdom instance
-const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`);
-const { window } = dom;
-
-// Setup global window and document for jQuery
-global.window = window;
-global.document = window.document;
-global.navigator = {
-  userAgent: 'node.js',
-};
 
 const input = window.document.createElement('input');
 input.type = 'tel';
@@ -40,13 +31,12 @@ window.document.body.appendChild(input);
 describe('PhoneMask', () => {
   it('should format phone numbers correctly when typing', async () => {
   
-    input.value = '';
+    input.value = '';    
     PhoneMask.attach('#phone');
     
     for(let i = 0; i < 10; i++) {
         input.value += (i).toString();       
-        input.dispatchEvent(new window.Event('input'));
-        // await new Promise(resolve => setTimeout(resolve, 100))
+        input.dispatchEvent(new window.Event('input'));        
     }
     
     expect(input.value).to.equal('012-345-6789');
@@ -56,8 +46,7 @@ describe('PhoneMask', () => {
    
     input.value = '1234567890';
     PhoneMask.attach('#phone');
-    input.dispatchEvent(new window.Event('input'));
-
+    input.dispatchEvent(new window.Event('input'));    
     expect(input.value).to.equal('123-456-7890');
   });
 });

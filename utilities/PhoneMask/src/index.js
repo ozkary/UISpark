@@ -1,5 +1,5 @@
 /**
- * UISpark - PhoneMask Component
+ * UISpark - PhoneMask Utility
  * 
  * Provides phone number formatting functionality.
  * Formats input fields to display phone numbers in a specified format.
@@ -14,7 +14,7 @@
  * @created  2024-10-01
  * @updated  2024-10-01
  */
-
+const $ = require('jquery');
 // src/index.js
 
 function formatPhone(input) {
@@ -33,12 +33,10 @@ function formatPhone(input) {
     formattedValue = value.substring(0, 3) + del + value.substring(3, 6) + del + value.substring(6, 10);
     input.value = formattedValue;  
   }
-  
 }
 
 module.exports = {
-  attach: function(selector) {
-    const $ = require('jquery');
+  attach: function(selector) {    
     $(selector).on('input', function() {
       formatPhone(this);
     });

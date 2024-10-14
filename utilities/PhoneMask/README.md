@@ -32,7 +32,7 @@ Add an input field in your HTML
 
 ```html
 
-<input type="tel" id="phone" name="phone" placeholder="###-###-####" />
+<input type="tel" id="phone" name="phone"  maxlength="12" pattern="\d{3}-\d{3}-\d{4}" placeholder="###-###-####" />
 
 ```
 
